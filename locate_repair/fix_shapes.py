@@ -462,10 +462,11 @@ class ShapeFixer:
                 break
 
 if __name__ == '__main__':
-    data_source = 'StackOverflow' # ICSE2020ToRepair
+    data_source = sys.argv[1] # StackOverflow or ICSE2020ToRepair
     data_dir = os.path.dirname(os.path.realpath(__file__))+f'/../SFData/{data_source}'
     sys.path.append(data_dir)
-    question_ids = pd.read_excel(os.path.dirname(os.path.realpath(__file__))+'/../SFData/{data_source}.xlsx')['question id']
+    question_ids = pd.read_excel(os.path.dirname(os.path.realpath(__file__))+f'/../SFData/{data_source}.xlsx')['question id']
+    question_ids = question_ids[0:1]
     for qi in tqdm(question_ids):
         shapeFixer = ShapeFixer(data_dir)
         shapeFixer.fix_shape_incompatibility(qi, 5)
