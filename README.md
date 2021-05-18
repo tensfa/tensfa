@@ -12,10 +12,16 @@ To address the above challenge, we conduct a deep empirical study on crashing te
 We then propose and implement Tensfa, an approach to detecting and repairing crashing tensor shape faults. 
 
 The following figure presents an overview of Tensfa.
-* Tensfa takes a machine learning method to learn from crash messages and employs decision trees in detecting tensor shape faults. Detection code is available [here](./detect).
-* Tensfa also provides the first automated solution to repairing the detected faults: it tracks shape properties by a customized Python debugger, analyzes their data dependences, and uses the twelve patterns to generate patches. Localization and repair code is available [here](./locate_repair).
+* Tensfa takes a machine learning method to learn from crash messages and employs decision trees in detecting tensor shape faults. Detection code is available in the directory [detect](./detect).
+* Tensfa also provides the first automated solution to repairing the detected faults: it tracks shape properties by a customized Python debugger, analyzes their data dependences, and uses the twelve patterns to generate patches. Localization and repair code is available in the directory [locate_repair](./locate_repair).
 <div align=center><img src="./approach.png" alt="overview" width=100% /></div>
 
 ## Dataset
 
-We construct SFData, a set of 146 buggy programs with crashing tensor shape faults. Our Tensfa has been implemented and evaluated on SFData and IslamData (another dataset of tensor shape faults). The results clearly show the effectiveness of Tensfa. In particular, Tensfa achieves the state-of-the-art results: it reaches an F1-score of 96.88% in detecting the faults and repairs 80 out of 146 buggy programs in SFData, which is available [here](./SFData).
+We construct SFData, a set of 146 buggy programs with crashing tensor shape faults, by taking the following steps:
+1. collecting shape-fault-related posts in StackOverflow
+2. analyzing these faults and further associating them with other supplementary information (e.g., crash messages, source code, patches and test data).
+SFData is available in the directory [SFData](./SFData).
+
+## Results
+Our Tensfa has been implemented and evaluated on SFData and IslamData (another dataset of tensor shape faults). The results clearly show the effectiveness of Tensfa. In particular, Tensfa achieves the state-of-the-art results: it reaches an F1-score of 96.88% in detecting the faults and repairs 80 out of 146 buggy programs in SFData.
