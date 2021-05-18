@@ -1,0 +1,8 @@
+env_model = Sequential()
+env_model.add(Dense(8, activation='relu', input_dim=8))
+env_model.add(Dense(128, activation='relu'))
+env_model.add(Dense(256, activation='relu'))
+env_model.add(Dense(512, activation='relu'))
+env_model.add(Dense(14, activation='softmax'))
+env_model.summary()
+env_model.save('model_weights/weights.environment.h5')

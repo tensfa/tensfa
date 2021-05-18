@@ -1,0 +1,10 @@
+model = Sequential()
+model.add(Conv2D(32, (3,3), input_shape=Xtrain.shape[1:], padding='same'))
+model.add(Activation('relu'))
+model.add(Dropout(0.2))
+model.add(BatchNormalization())
+model.add(Flatten())
+model.add(Dense(2, activation='relu'))
+
+model.compile('adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.fit(Xtrain, Ytrain, validation_data=(Xtest, Ytest))

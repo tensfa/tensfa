@@ -1,0 +1,8 @@
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.LSTM(32, return_sequences=True, stateful=False, input_shape = (20,85,1)))
+model.add(tf.keras.layers.LSTM(20))
+model.add(tf.keras.layers.Dense(nb_classes, activation='softmax'))
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=["accuracy"])
+model.summary()
+print("Train...")
+model.fit(X_train, y_train, batch_size=batch_size, nb_epoch=50, validation_data=(X_test, y_test))
