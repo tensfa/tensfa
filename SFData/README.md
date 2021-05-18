@@ -17,6 +17,25 @@ SFData consists of 146 buggy programs with crashing tensor shape faults. Among t
   |--- ISSTA2018NoTensorShapeFault.xlsx   :  Metadata from the ISSTA2018 papar
 ```
 
+The ICSE2020 paper:
+@inproceedings{islam2020repairing,
+  title={Repairing deep neural networks: Fix patterns and challenges},
+  author={Islam, Md Johirul and Pan, Rangeet and Nguyen, Giang and Rajan, Hridesh},
+  booktitle={2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE)},
+  pages={1135--1146},
+  year={2020},
+  organization={IEEE}
+}
+
+The ISSTA2018 paper:
+@inproceedings{zhang2018empirical,
+  title={An empirical study on TensorFlow program bugs},
+  author={Zhang, Yuhao and Chen, Yifan and Cheung, Shing-Chi and Xiong, Yingfei and Zhang, Lu},
+  booktitle={Proceedings of the 27th ACM SIGSOFT International Symposium on Software Testing and Analysis},
+  pages={129--140},
+  year={2018}
+}
+
 ## Program
  ```
   |--- s[question_id]_original.py         :  Original program in the post #question_id on StackOverflow
