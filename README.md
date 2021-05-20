@@ -25,3 +25,4 @@ SFData is available in the directory [SFData](./SFData).
 
 ## Results
 Our Tensfa has been implemented and evaluated on SFData and IslamData (another dataset of tensor shape faults). The results clearly show the effectiveness of Tensfa. In particular, Tensfa achieves the state-of-the-art results: it reaches an F1-score of 96.88% in detecting the faults and repairs 80 out of 146 buggy programs in SFData.
+The experimental results are available in the directory [results](./results).
